@@ -1,6 +1,6 @@
 
 .pytest_cache
-report
-.idea
+report/
+.idea/
 __pycache__
 
