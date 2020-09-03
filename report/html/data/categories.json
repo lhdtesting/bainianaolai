@@ -1,0 +1,37 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 0",
+      "children" : [ {
+        "name" : "test_login.TestLogin.test_003",
+        "uid" : "bba53a328ed16a39",
+        "parentUid" : "c9c77d7ae15b4ab6e63220cefc19b68f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1599122627418,
+          "stop" : 1599122627434,
+          "duration" : 16
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_login.TestLogin.test_004",
+        "uid" : "2a172d4bdcfa378e",
+        "parentUid" : "c9c77d7ae15b4ab6e63220cefc19b68f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1599122627459,
+          "stop" : 1599122627473,
+          "duration" : 14
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c9c77d7ae15b4ab6e63220cefc19b68f"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}
