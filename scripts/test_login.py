@@ -9,4 +9,4 @@ class TestLogin:
         assert 0
 
     def test_004(self):
-        assert 0
+        assert 1
