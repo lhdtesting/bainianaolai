@@ -1,7 +1,7 @@
 from appium import webdriver
 
 
-def init_driver():
+def init_driver(no_reset=True):
     # server 启动参数
     desired_caps = dict()
     desired_caps['platformName'] = 'Android'
@@ -13,7 +13,7 @@ def init_driver():
     # 可以输入中文
     desired_caps['unicodeKeyboard'] = True
     desired_caps['resetKeyboard'] = True
-    desired_caps['noReset'] = True
+    desired_caps['noReset'] = no_reset
     # 使用automationName框架查找toast
     desired_caps['automationName'] = 'Uiautomator2'
     # app信息

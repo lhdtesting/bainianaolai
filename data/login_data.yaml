@@ -1,0 +1,13 @@
+test_login:
+  test_login1:
+    username: "itheimatest"
+    password: "1314@gensui"
+    toast: "密码错误"
+  test_login2:
+    username: "itheimatest"
+    password: "1314@gensuizhu"
+    toast: null
+  test_login3:
+    username: "itheimatest1"
+    password: "1314@gensuizhu"
+    toast: "用户不存在"
