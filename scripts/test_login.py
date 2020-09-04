@@ -1,12 +1,16 @@
+from time import sleep
+
+from base.base_driver import init_driver
+
+
 class TestLogin:
-    def test_001(self):
-        assert 1
 
-    def test_002(self):
-        assert 1
+    def setup(self):
+        self.driver = init_driver()
 
-    def test_003(self):
-        assert 0
+    def teardown(self):
+        sleep(2)
+        self.driver.quit()
 
-    def test_004(self):
-        assert 0
+    def test_login(self):
+        print("test_login")
