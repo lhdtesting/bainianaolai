@@ -22,10 +22,3 @@ def init_driver(no_reset=True):
     desired_caps['appPackage'] = 'com.yunmall.lc'
     desired_caps['appActivity'] = 'com.yunmall.ymctoc.ui.activity.MainActivity'
     return webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-
-
-
-
-
-
-
