@@ -1,7 +1,10 @@
+from page.about_page import AboutPage
+from page.be_vip_page import BeVipPage
 from page.home_page import HomePage
 from page.login_page import LoginPage
 from page.person_center_page import PersonCenterPage
 from page.register_page import RegisterPage
+from page.setting_page import SettingPage
 
 
 class Page:
@@ -23,4 +26,17 @@ class Page:
     @property
     def get_person_center_page_instance(self):
         return PersonCenterPage(self.driver)
+
+    @property
+    def get_setting_page_instance(self):
+        return SettingPage(self.driver)
+
+    @property
+    def get_about_page_instance(self):
+        return AboutPage(self.driver)
+
+    @property
+    def get_be_vip_instance(self):
+        return BeVipPage(self.driver)
+
 
