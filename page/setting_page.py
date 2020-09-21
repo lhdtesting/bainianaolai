@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 
 from base.base_action import BaseAction
@@ -8,11 +9,14 @@ class SettingPage(BaseAction):
     clear_cache_btn = By.XPATH, "//*[@text='清理缓存']"
     address_list_button = By.XPATH, "//*[@text='地址管理']"
 
+    @allure.step(title='设置页面 点击关于')
     def page_click_about_btn(self):
         self.find_element_with_scroll(self.about_btn).click()
 
+    @allure.step(title='设置页面 点击清理缓存')
     def page_click_clear_cache_btn(self):
         self.find_element_with_scroll(self.clear_cache_btn).click()
 
+    @allure.step(title='设置页面 点击地址管理')
     def page_click_address_list_button(self):
         self.find_element_with_scroll(self.address_list_button).click()

@@ -1,5 +1,6 @@
 import random
 
+import allure
 from selenium.webdriver.common.by import By
 
 from base.base_action import BaseAction
@@ -20,18 +21,22 @@ class GoodDetailPage(BaseAction):
         title_xpath = By.XPATH, "//*[@text='%s']" % title
         return self.is_feature_exist(title_xpath)
 
+    @allure.step(title='商品详情页面 点击购物车')
     def page_click_shop_cart(self):
         self.base_click_element(self.shop_cart)
 
+    @allure.step(title='商品详情页面 点击加入购物车')
     def page_click_add_cart_btn(self):
         self.base_click_element(self.add_shop_cart_button)
 
+    @allure.step(title='商品详情页面 点击确认')
     def page_click_confirm_btn(self):
         self.base_click_element(self.confirm_button)
 
     def choose_spec(self, text):
         return text.split(" ")[1]
 
+    @allure.step(title='商品详情页面 选择规格')
     def click_spec(self):
         while True:
             self.page_click_confirm_btn()
