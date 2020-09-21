@@ -1,5 +1,10 @@
 from page.about_page import AboutPage
+from page.address_list_page import AddressListPage
 from page.be_vip_page import BeVipPage
+from page.category_page import CategoryPage
+from page.edit_address_page import EditAddressPage
+from page.good_detail_page import GoodDetailPage
+from page.goods_list_page import GoodsListPage
 from page.home_page import HomePage
 from page.login_page import LoginPage
 from page.person_center_page import PersonCenterPage
@@ -38,5 +43,25 @@ class Page:
     @property
     def get_be_vip_instance(self):
         return BeVipPage(self.driver)
+
+    @property
+    def get_address_list_instance(self):
+        return AddressListPage(self.driver)
+
+    @property
+    def get_edit_address_page_instance(self):
+        return EditAddressPage(self.driver)
+
+    @property
+    def get_category_page_instance(self):
+        return CategoryPage(self.driver)
+
+    @property
+    def get_goods_list_page_instance(self):
+        return GoodsListPage(self.driver)
+
+    @property
+    def get_good_detail_page_instance(self):
+        return GoodDetailPage(self.driver)
 
 

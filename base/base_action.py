@@ -1,3 +1,4 @@
+import time
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -13,6 +14,11 @@ class BaseAction:
         return (WebDriverWait(self.driver, timeout, poll).
                 until(lambda x: x.find_element(feature_by, feature_value)))
 
+    def base_find_elements(self, feature, timeout=10, poll=1.0):
+        feature_by, feature_value = feature
+        return (WebDriverWait(self.driver, timeout, poll).
+                until(lambda x: x.find_elements(feature_by, feature_value)))
+
     def base_click_element(self, feature):
         self.base_find_element(feature).click()
 
@@ -27,16 +33,23 @@ class BaseAction:
 
     def is_toast_exist(self, message):
 
-        message_xpath = By.XPATH, "//*[contains(@text, '"+message+"')]"  # 使用包含的方式定位
+        message_xpath = By.XPATH, "//*[contains(@text, '%s')]" % message # 使用包含的方式定位
         try:
             self.base_find_element(message_xpath, timeout=5, poll=0.1)
             return True
         except TimeoutException:
             return False
 
+    def is_feature_exist(self, feature):
+        try:
+            self.base_find_element(feature, timeout=5, poll=0.1)
+            return True
+        except TimeoutException:
+            return False
+
     def get_toast_text(self, message):
         if self.is_toast_exist(message):
-            message_xpath = By.XPATH, "//*[contains(@text, '"+message+"')]"  # 使用包含的方式定位
+            message_xpath = By.XPATH, "//*[contains(@text, '%s')]" % message  # 使用包含的方式定位
             return self.base_find_element(message_xpath,  timeout=5, poll=0.1).text
         else:
             raise Exception("toast未出现，请检查参数是否正确")
@@ -97,7 +110,24 @@ class BaseAction:
                     break
                 page_source = self.driver.page_source
 
+    def is_keyword_in_page_source(self, keyword, timeout=10, poll=0.1):
+        """
+        判断某字符串关键字是否出现在页面源码中
+        :param keyword: 字符串关键字
+        :param timeout:
+        :param poll:
+        :return: 如果字符串关键字在页面源码中，返回True,否则返回False
+        """
+        end_time = time.time() + timeout
+        while True:
+            if end_time < time.time():
+                return False
+            if keyword in self.driver.page_source:
+                return True
+            time.sleep(poll)
 
+    def base_get_text(self, feature):
+        return self.base_find_element(feature).text
 
 
 

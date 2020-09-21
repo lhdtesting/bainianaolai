@@ -1,0 +1,37 @@
+test_address:
+#  test_address1:
+#    receipt_name: "李四"
+#    phone: "17777777777"
+#    info: "二单元305"
+#    post_code: "100000"
+#    toast: Null
+#  test_address2:
+#    receipt_name: ""
+#    phone: "17777777777"
+#    info: "二单元305"
+#    post_code: "100000"
+#    toast: "收件人姓名"
+#  test_address3:
+#    receipt_name: "花花"
+#    phone: "1888888888"
+#    info: "二单元305"
+#    post_code: "100000"
+#    toast: "11位手机号"
+  test_address4:
+    receipt_name: "叨叨"
+    phone: "13718893820"
+    info: ""
+    post_code: "100000"
+    toast: "请输入详细地址"
+  test_address5:
+    receipt_name: "哈哈哈"
+    phone: "15244721164"
+    info: "非洲凤凰哈哈哈"
+    post_code: "1000"
+    toast: "邮政编码错误"
+  test_address6:
+    receipt_name: "嘚瑟嘚瑟嘚瑟"
+    phone: "15045112413"
+    info: "非洲凤凰hahhah"
+    post_code: ""
+    toast: Null
