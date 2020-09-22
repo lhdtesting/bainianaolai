@@ -7,6 +7,21 @@ from base.base_action import BaseAction
 class HomePage(BaseAction):
     me_button = By.ID, "com.yunmall.lc:id/tab_me"
     category_button = By.ID, "com.yunmall.lc:id/tab_category"
+    cart_button = By.ID, "com.yunmall.lc:id/tab_shopping_cart"
+    search_button = By.ID, "com.yunmall.lc:id/ymtitlebar_left_btn_image"
+    home_button = By.ID, "com.yunmall.lc:id/tab_home"
+
+    @allure.step(title='主页 点击 搜索 放大镜')
+    def page_click_search_button(self):
+        self.base_click_element(self.search_button)
+
+    @allure.step(title='主页 点击 购物车')
+    def page_click_cart_button(self):
+        self.base_click_element(self.cart_button)
+
+    @allure.step(title='主页 点击 首页按钮')
+    def page_click_home_button(self):
+        self.base_click_element(self.home_button)
 
     @allure.step(title='主页 点击 我')
     def page_click_me_button(self):

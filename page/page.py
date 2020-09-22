@@ -1,6 +1,7 @@
 from page.about_page import AboutPage
 from page.address_list_page import AddressListPage
 from page.be_vip_page import BeVipPage
+from page.cart_page import CartPage
 from page.category_page import CategoryPage
 from page.edit_address_page import EditAddressPage
 from page.good_detail_page import GoodDetailPage
@@ -9,6 +10,7 @@ from page.home_page import HomePage
 from page.login_page import LoginPage
 from page.person_center_page import PersonCenterPage
 from page.register_page import RegisterPage
+from page.search_page import SearchPage
 from page.setting_page import SettingPage
 
 
@@ -63,5 +65,13 @@ class Page:
     @property
     def get_good_detail_page_instance(self):
         return GoodDetailPage(self.driver)
+
+    @property
+    def get_cart_page_instance(self):
+        return CartPage(self.driver)
+
+    @property
+    def get_search_page_instance(self):
+        return SearchPage(self.driver)
 
 
